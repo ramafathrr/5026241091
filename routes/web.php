@@ -7,6 +7,7 @@ use App\Http\Controllers\keranjangBelanjaController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SnackController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -88,10 +89,18 @@ Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.cre
 Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
-Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+// Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 
 Route::get('/keranjangbelanja', [keranjangBelanjaController::class, 'index']);
 Route::get('/keranjangbelanja/tambah', [keranjangBelanjaController::class, 'tambah']);
 Route::post('/keranjangbelanja/store', [keranjangBelanjaController::class, 'store'])->name("keranjangbelanja.store");
 // Route::delete('/keranjangbelanja/{id}', [keranjangBelanjaController::class, 'hapus']);
 Route::get('/keranjangbelanja/hapus/{id}', [keranjangBelanjaController::class, 'hapus']);
+
+Route::get('/snack', [SnackController::class, 'index']);
+Route::get('/snack/tambah', [SnackController::class, 'tambah']);
+Route::post('/snack/store', [SnackController::class, 'store']);
+Route::get('/snack/edit/{id}', [SnackController::class, 'edit']);
+Route::post('/snack/update', [SnackController::class, 'update']);
+Route::get('/snack/hapus/{id}', [SnackController::class, 'hapus']);
+Route::get('/snack/cari', [SnackController::class, 'cari']);
