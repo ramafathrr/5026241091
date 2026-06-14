@@ -1,5 +1,5 @@
 @extends('template1')
-@section('judul_halaman', 'Tambah Data Keranjang Belanja')
+@section('title', 'Tambah Data Keranjang Belanja')
 @section('konten')
 
     <a href="/keranjangbelanja" class="btn btn-secondary mb-4">Kembali</a>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('keranjangbelanja.store') }}" method="post">
+            <form action="/keranjangbelanja/store" method="post">
                 {{ csrf_field() }}
 
                 <div class="row mb-3">

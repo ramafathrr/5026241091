@@ -1,5 +1,5 @@
 @extends('template1')
-@section('judul_halaman', 'Keranjang Belanja')
+@section('title', 'Keranjang Belanja')
 @section('konten')
     <div>
         <a href="/keranjangbelanja/tambah" class="btn btn-success"> Beli</a>

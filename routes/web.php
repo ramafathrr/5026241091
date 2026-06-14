@@ -119,7 +119,7 @@ Route::post('/snack/update', [SnackController::class, 'update']);
 Route::get('/snack/hapus/{id}', [SnackController::class, 'hapus']);
 Route::get('/snack/cari', [SnackController::class, 'cari']);
 
-// // route nilai kuliah
-// Route::get('/nilaikuliah',[NilaiKuliahController::class, 'index']);
-// Route::get('/nilaikuliah/tambah',[NilaiKuliahController::class, 'tambah']);
-// Route::post('/nilaikuliah/store',[NilaiKuliahController::class, 'store']);
+// route nilai kuliah
+Route::get('/nilaikuliah',[NilaiKuliahController::class, 'index']);
+Route::get('/nilaikuliah/tambah',[NilaiKuliahController::class, 'tambah']);
+Route::post('/nilaikuliah/store',[NilaiKuliahController::class, 'store']);

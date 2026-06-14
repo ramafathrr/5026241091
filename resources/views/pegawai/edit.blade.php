@@ -1,5 +1,5 @@
 @extends('template1')
-@section('judul_halaman', 'Data Pegawai')
+@section('title', 'Edit Data Pegawai')
 @section('konten')
 
     <a href="/pegawai" class="btn btn-secondary mb-4">Kembali</a>

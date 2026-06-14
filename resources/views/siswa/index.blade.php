@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template1')
 @section('title', 'Data Siswa')
 @section('konten')
 
@@ -8,7 +8,7 @@
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
-    <a href="{{ route('siswa.create') }}">Tambah Siswa</a>
+    <a href="{{ route('siswa.create') }}" class="btn btn-primary">Tambah Siswa</a>
 
     <br><br>
 
@@ -36,13 +36,12 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>
-
                     </form>
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="5">Belum ada data siswa.</td>
+                <td colspan="5">Belum ada data siswa</td>
             </tr>
         @endforelse
     </table>

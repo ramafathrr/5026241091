@@ -1,7 +1,9 @@
-@extends('template')
-@section('title', 'Data Pegawai')
+@extends('template1')
+@section('title', 'Edit Data Siswa')
 @section('konten')
 
+    <br>
+    <a href="{{ route('siswa.index') }}" class="btn btn-secondary mb-4">Kembali</a>
     <h2>Edit Siswa</h2>
 
     @if ($errors->any())
@@ -12,36 +14,53 @@
         </ul>
     @endif
 
-    <form action="{{ route('siswa.update', $siswa->NRP) }}" method="POST" onsubmit="return validasiForm()">
-        @csrf
-        @method('PUT')
+    <div class="card">
+        <div class="card-header">
+            Form Edit Data Siswa
+        </div>
+        <div class="card-body">
 
-        <p>
-            <label>NRP</label><br>
-            <input type="text" name="NRP" id="NRP" maxlength="10" value="{{ old('NRP', $siswa->NRP) }}">
-        </p>
+            <form action="{{ route('siswa.update', $siswa->NRP) }}" method="POST" onsubmit="return validasiForm()">
+                @csrf
+                @method('PUT')
 
-        <p>
-            <label>Nama</label><br>
-            <input type="text" name="Nama" id="Nama" maxlength="20" value="{{ old('Nama', $siswa->Nama) }}">
-        </p>
+                <div class="row mb-3">
+                    <label for="NRP" class="col-sm-2 col-form-label">NRP</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="NRP" id="NRP" class="form-control" required>
+                    </div>
+                </div>
 
-        <p>
-            <label>Kelas</label><br>
-            <input type="text" name="Kelas" id="Kelas" maxlength="5" value="{{ old('Kelas', $siswa->Kelas) }}">
-        </p>
+                <div class="row mb-3">
+                    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="Nama" id="Nama" class="form-control" required>
+                    </div>
+                </div>
 
-        <p>
-            <label>Tanggal Lahir</label><br>
-            <input type="date" name="TanggalLahir" id="TanggalLahir"
-                value="{{ old('TanggalLahir', $siswa->TanggalLahir) }}">
-        </p>
+                <div class="row mb-3">
+                    <label for="Kelas" class="col-sm-2 col-form-label">Kelas</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="Kelas" id="Kelas" class="form-control" required>
+                    </div>
+                </div>
 
-        <button type="submit">Update</button>
-        <a href="{{ route('siswa.index') }}">Kembali</a>
-    </form>
+                <div class="row mb-3">
+                    <label for="Tanggal Lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label><br>
+                    <div class="col-sm-10">
+                        <input type="date" name="TanggalLahir" id="TanggalLahir" value="{{ old('TanggalLahir') }}">
+                    </div>
+                </div>
 
-    <script>
+                <div class="row">
+                    <div class="offset-sm-2 col-sm-10">
+                        <input type="submit" value="Simpan Data" class="btn btn-primary">
+                    </div>
+            </form>
+        </div>
+    </div>
+
+            <script>
         function validasiForm() {
             let nrp = document.getElementById('NRP').value.trim();
             let nama = document.getElementById('Nama').value.trim();
