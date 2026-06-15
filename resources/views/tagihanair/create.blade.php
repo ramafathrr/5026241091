@@ -60,7 +60,7 @@
             let MeterAwal = document.getElementById('MeterAwal').value.trim();
             let MeterAkhir = document.getElementById('MeterAkhir').value.trim();
 
-            if (!(MeterAkhir > MeterAwal+20)) {
+            if (!(parseInt(MeterAkhir) > parseInt(MeterAwal)+20)) {
                 Swal.fire({
                     title: "Kesalahan Input Data!",
                     text: "Meter Akhir harus lebih besar nilainya dari Meter Awal minimal 21",
