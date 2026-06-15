@@ -10,6 +10,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SnackController;
+use App\Http\Controllers\TagihanAirController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -123,3 +124,8 @@ Route::get('/snack/cari', [SnackController::class, 'cari']);
 Route::get('/nilaikuliah',[NilaiKuliahController::class, 'index']);
 Route::get('/nilaikuliah/tambah',[NilaiKuliahController::class, 'tambah']);
 Route::post('/nilaikuliah/store',[NilaiKuliahController::class, 'store']);
+
+// route tagihan air
+Route::get('/eas', [TagihanAirController::class, 'index'])->name('tagihan_air.index');
+Route::get('/eas/create', [TagihanAirController::class, 'create'])->name('tagihan_air.create');
+Route::post('/eas', [TagihanAirController::class, 'store'])->name('tagihan_air.store');
